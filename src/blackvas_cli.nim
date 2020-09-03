@@ -1,16 +1,8 @@
-import parseopt2
-import BlackvasCli/create as create
+import BlackvasCli/[createModule, serveModule]
 
-if isMainModule:
-  for kind, key, val in getopt() :
-    case kind
-    of cmdArgument:
-      discard
-    of cmdLongOption:
-      case key:
-      of "create":
-        create.interaction($val)
-    of cmdShortOption:
-      echo "オプション2 > ", key, val
-    of cmdEnd:
-      echo "終了"
+when isMainModule:
+  import cligen
+  dispatchMulti(
+    [createModule.create],
+    [serveModule.serve]
+  )
