@@ -2,12 +2,10 @@
 
 version       = "0.1.0"
 author        = "momeemt"
-description   = "A new awesome nimble package"
+description   = "The Blackvas CLI"
 license       = "MIT"
 srcDir        = "src"
 bin           = @["blackvas_cli"]
-
-
 
 # Dependencies
 
