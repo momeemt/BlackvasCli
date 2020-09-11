@@ -57,6 +57,7 @@ proc create*(appName: string): int =
   echoGenerating(blackvasJsonPath)
   var blackvasJsonFile: File = open(projectPath & blackvasJsonPath, FileMode.fmWrite)
   let blackvasJson = %* {
+    "name": appName,
     "design": {
       "AtomicDesign": atomicDesign
     }
